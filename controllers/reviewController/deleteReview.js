@@ -1,4 +1,4 @@
-const Review = require('../../models/reviewModel');
+const Review = require('../../models/Review');
 const deleteReview = async (req, res) => {
   try {
     const reviewId = req.params.id;

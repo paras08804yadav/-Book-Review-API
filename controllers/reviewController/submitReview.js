@@ -1,8 +1,8 @@
-const Review = require('../../models/reviewModel');
+const Review = require('../../models/Review');
 
 const submitReview = async (req, res) => {
   try {
-    const userId = req.user.id; // Assuming you use authentication middleware that adds req.user
+    const userId = req.user.id; 
     const bookId = req.params.id;
     const { rating, comment } = req.body;
 

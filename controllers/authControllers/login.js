@@ -1,4 +1,4 @@
-const { generateAccessToken, generateRefreshToken } = require('../../utils/tokenUtils');
+const { generateAccessToken } = require('../../utils/tokenUtils');
 const User = require('../../models/User');
 
 const login = async (req, res) => {
@@ -24,12 +24,10 @@ const login = async (req, res) => {
     }
 
     const accessToken = generateAccessToken(user._id);
-    const refreshToken = generateRefreshToken(user._id);
 
     return res.status(200).json({
       message: 'Signin successful',
       accessToken,
-      refreshToken,
     });
   } catch (err) {
     console.error('Signin error:', err);
